@@ -1,7 +1,8 @@
 import React from 'react'
 import ProductsCard from './ProductsCard'
 
-const products = () => {
+const products = ({products}) => {
+  console.log(products);
   return (
     <div className='py-10'> 
       <div className='flex items-center   flex-col gap-6'>

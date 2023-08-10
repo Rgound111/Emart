@@ -47,7 +47,7 @@ const Footer = () => {
         </div>
         {/*=============  Profile  End here     ===============*/}
         {/*=============  Suscribe   Start here  ===============*/}
-        <div className='flex flex-col justify-center'>
+        <div className='flex flex-col justify-center '>
           <input className='text-sm px-4 py-2 bg-transparent border' placeholder='email' type="text" />
           <button className='text-sm border px-4 py-2 text-white hover:bg-gray-900 active:text-black active:bg-white'>Suscribe</button>
         </div>

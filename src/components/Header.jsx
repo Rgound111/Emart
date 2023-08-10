@@ -6,7 +6,7 @@ import {icon} from '../assests/index'
 
 const Header = () => {
     return (
-        <div className='w-full h-20 border-b-[1px]  border-gray-800 bg-white font-titleFont'>
+        <div className='w-full h-20 border-b-[1px]  border-gray-800 bg-white font-titleFont sticky top-0 z-50'>
             <div className=' max-w-screen-xl mx-auto h-full  flex items-center justify-between'>
                 <div>
                     <img className='w-28' src={logo} alt="NavLogo" />
