@@ -12,8 +12,12 @@ const products = ({products}) => {
             Lorem ipsum dolor sit amet consectetur adipisicing elit. A est placeat neque dolor ratione labore saepe, rerum eum molestiae illum excepturi reiciendis esse quis veniam aspernatur. Laudantium ea sequi, accusantium corrupti natus enim corporis nihil, et veniam, aperiam explicabo consequuntur.
         </p>
       </div>
-      <div className='text-center text-gray-700 text-xl py-4'>
-        <ProductsCard/>
+      <div className='max-w-screen-xl mx-auto text-gray-700  py-10 grid grid-cols-4 gap-10'>
+        { 
+          products?.map((item) => (
+            <ProductsCard key={item._id} product={item} />
+          ))
+        }
       </div>
     </div>
   )
