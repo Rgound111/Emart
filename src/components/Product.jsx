@@ -54,26 +54,12 @@ const Product = () => {
               <div className=' flex items-center gap-4 text-sm font-semibold'>
                 <button
                 onClick={()=> 
-                  dispatch(decreamentQuantity({
-                    _id : details._id,
-                    title : details.title,
-                    image : details.image,
-                    price : details.price,
-                    quantity : 1,
-                    description : details.description,
-                  }))}
+                  setBaseQty( baseQty === 1 ? (baseQty = 1) : baseQty - 1 ) }
                   className='border h-5 font-normal text-lg flex justify-center items-center px-2 hover:text-white hover:bg-gray-700 duration-300 active:bg-black'>-</button>
                 <span>{baseQty}</span>
                 <button
                   onClick={()=> 
-                    dispatch(increamentQuantity({
-                      _id : details._id,
-                      title : details.title,
-                      image : details.image,
-                      price : details.price,
-                      quantity : 1,
-                      description : details.description,
-                    }))}
+                    setBaseQty(baseQty + 1)}
                   className='border h-5 font-normal text-lg flex justify-center items-center px-2 hover:text-white hover:bg-gray-700 duration-300 active:bg-black'>+</button>
               </div>
             </div>
