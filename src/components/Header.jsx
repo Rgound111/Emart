@@ -19,7 +19,7 @@ console.log(productData)
                 </Link>
                 <div className='flex items-center gap-8' >
                     <ul className='flex items-center gap-8'>
-                        <li className='text-base text-black font-bold hover:text-orange-700 hover:underline underline-offset-2 decoration-[1px] cursor-pointer duration-200 '>Home</li>
+                        <Link to={'/'} className='text-base text-black font-bold hover:text-orange-700 hover:underline underline-offset-2 decoration-[1px] cursor-pointer duration-200 '>Home</Link>
                         <li className='text-base text-black font-bold hover:text-orange-700 hover:underline underline-offset-2 decoration-[1px] cursor-pointer duration-200  '>Pages</li>
                         <li className='text-base text-black font-bold hover:text-orange-700 hover:underline underline-offset-2 decoration-[1px] cursor-pointer duration-200  '>Shop</li>
                         <li className='text-base text-black font-bold hover:text-orange-700 hover:underline underline-offset-2 decoration-[1px] cursor-pointer duration-200  '>Element</li>

@@ -2,8 +2,10 @@ import React from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { MdOutlineClose } from "react-icons/md"
 import { HiOutLineArrowLeft } from 'react-icons/hi'
+import { BsArrowLeft } from 'react-icons/bs'
 import { toast, ToastContainer } from 'react-toastify';
-import { deleteItem } from '../redux/emartSlice'
+import { decreamentQuantity, deleteItem, increamentQuantity, resetItem } from '../redux/emartSlice'
+import { Link } from 'react-router-dom'
 
 
 const CartItem = () => {
@@ -33,9 +35,27 @@ const CartItem = () => {
                 <p className='text-sm'>Quantity</p>
                 <div className=' flex items-center gap-4 text-sm font-semibold'>
                   <button
+                    onClick={()=> 
+                    dispatch(decreamentQuantity({
+                      _id : item._id,
+                      title : item.title,
+                      image : item.image,
+                      price : item.price,
+                      quantity : 1,
+                      description : item.description,
+                    }))}
                     className='border h-5 font-normal text-lg flex justify-center items-center px-2 hover:text-white hover:bg-gray-700 duration-300 active:bg-black'>-</button>
                   {item.quantity}
                   <button
+                    onClick={()=> 
+                    dispatch(increamentQuantity({
+                      _id : item._id,
+                      title : item.title,
+                      image : item.image,
+                      price : item.price,
+                      quantity : 1,
+                      description : item.description,
+                    }))}
                     className='border h-5 font-normal text-lg flex justify-center items-center px-2 hover:text-white hover:bg-gray-700 duration-300 active:bg-black'>+</button>
                 </div>
               </div>
@@ -44,6 +64,19 @@ const CartItem = () => {
           ))
         }
       </div>
+      <button
+        onClick={() =>
+          dispatch(resetItem()) & toast.error("Your Cart is Empty!")
+        }
+        className='text-white bg-red-500 py-1 px-6 mt-5 ml-7 hover:bg-red-800 duration-300'>
+        Reset Cart
+      </button>
+      <Link to={'/'}>
+        <button className='flex items-center justify-center mt-5 ml-7 gap-1 text-gray-400 hover:text-black duration-300'>
+          <BsArrowLeft />
+          go shopping
+        </button>
+      </Link>
       <ToastContainer
         position="top-left"
         autoClose={2000}
