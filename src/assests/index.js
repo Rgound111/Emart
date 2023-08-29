@@ -8,5 +8,6 @@ import sale3 from './sale3.jpg' ;
 import paymentLogo from './paymentLogo.png' ;
 import paymentLogo1 from './paymentLogo1.png' ;
 import cartBg from './cartBg.jpg'
+import githubLogo from './githubLogo.png'
 
-export {logo , cart, cart1, icon ,sale1 ,sale2 ,sale3 , paymentLogo, paymentLogo1, cartBg  } ;
+export {logo , cart, cart1, icon ,sale1 ,sale2 ,sale3 , paymentLogo, paymentLogo1, cartBg, githubLogo  } ;

@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react'
 import { cartBg } from '../assests/index'
-import CartItem from './CartItem'
+import CartItem from '../components/CartItem'
 import { useSelector } from 'react-redux'
 import { useState } from 'react'
 

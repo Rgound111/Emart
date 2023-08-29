@@ -25,7 +25,7 @@ console.log(productData)
                         <li className='text-base text-black font-bold hover:text-orange-700 hover:underline underline-offset-2 decoration-[1px] cursor-pointer duration-200  '>Element</li>
                         <li className='text-base text-black font-bold hover:text-orange-700 hover:underline underline-offset-2 decoration-[1px] cursor-pointer duration-200  '>Blog</li>
                     </ul>
-                    <Link to={"./cart"}>
+                    <Link to={"/cart"}>
                     <div className='relative'>
                         <img className='w-9' src={cart1} alt="cartImage" />
                         <span className='absolute w-6 top-[0.8px] left-2 text-sm flex justify-center items-center font-titleFont font-semibold' >
@@ -33,7 +33,9 @@ console.log(productData)
                         </span>
                     </div>
                     </Link>
+                    <Link to={"/login"}>
                     <img className='w-12 rounded-full' src={icon} alt="logo" />
+                    </Link>
                 </div>
             </div>
 

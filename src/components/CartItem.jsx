@@ -1,7 +1,6 @@
 import React from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { MdOutlineClose } from "react-icons/md"
-import { HiOutLineArrowLeft } from 'react-icons/hi'
 import { BsArrowLeft } from 'react-icons/bs'
 import { toast, ToastContainer } from 'react-toastify';
 import { decreamentQuantity, deleteItem, increamentQuantity, resetItem } from '../redux/emartSlice'
