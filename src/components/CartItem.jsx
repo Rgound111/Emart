@@ -10,7 +10,7 @@ import { Link } from 'react-router-dom'
 const CartItem = () => {
   const dispatch = useDispatch()
   const productData = useSelector((state) => state.emart.productData);
-  console.log(productData)
+  // console.log(productData)
 
   return (
     <div className='w-2/3 pr-10'>

@@ -11,7 +11,7 @@ const ProductsCard = ({ product }) => {
   const id = product.title;
   //  console.log(id)
   const idString = (id) => {
-    return String(id).toLowerCase().split(" ").reverse().join("")
+    return String(id).toLowerCase().split(" ").join("")
   }
 
   const rootId = idString(id);
