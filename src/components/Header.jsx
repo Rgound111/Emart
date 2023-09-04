@@ -8,6 +8,7 @@ import { useSelector } from 'react-redux';
 
 const Header = () => {
  const productData = useSelector((state) => state.emart.productData)
+ const userInfo = useSelector((state) => state.emart.userInfo)
 // console.log(productData)
     return (
         <div className='w-full h-20 border-b-[1px]  border-gray-800 bg-white font-titleFont sticky top-0 z-50'>
@@ -34,8 +35,9 @@ const Header = () => {
                     </div>
                     </Link>
                     <Link to={"/login"}>
-                    <img className='w-12 rounded-full' src={icon} alt="logo" />
+                    <img className='w-10 rounded-full' src={ userInfo ? userInfo.image : icon} alt="logo" />
                     </Link>
+                   { userInfo &&  <p className='text-xl text-black font-normal hover:text-orange-700 hover:underline underline-offset-2 decoration-[1px] cursor-pointer duration-200  '>{userInfo.name}</p>}
                 </div>
             </div>
 

@@ -49,7 +49,7 @@ export const emartSlice = createSlice({
 
         ////////////// user start here ////////////
         addUser: (state , action) => {
-            console.log('action.payload', action.payload);
+            // console.log('action.payload', action.payload);
             state.userInfo = action.payload;
         },
         removeUser: (state) => {
