@@ -46,15 +46,18 @@ export const emartSlice = createSlice({
                 item.quantity--;
             }
         },
-        addUser: (state , action) =>{
+
+        ////////////// user start here ////////////
+        addUser: (state , action) => {
+            console.log('action.payload', action.payload);
             state.userInfo = action.payload;
         },
-        removeUser: (state) =>{
-            state.userInfo = null;
+        removeUser: (state) => {
+            state.userInfo = null ;
         },
 
     },
 });
 
-export const { addToCart, deleteItem, resetItem, increamentQuantity, decreamentQuantity,removeUser ,addUser } = emartSlice.actions;
+export const { addToCart, deleteItem, resetItem, increamentQuantity, decreamentQuantity, removeUser ,addUser } = emartSlice.actions;
 export default emartSlice.reducer;

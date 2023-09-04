@@ -4,7 +4,8 @@ import { getAuth, signOut, signInWithPopup, GoogleAuthProvider } from "firebase/
 import { toast, ToastContainer } from 'react-toastify';
 import { useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
-import addUser from '../redux/emartSlice'
+import {addUser} from '../redux/emartSlice'
+import {removeUser} from '../redux/emartSlice'
 
 
 const Login = () => {
@@ -14,23 +15,29 @@ const Login = () => {
     const provider = new GoogleAuthProvider();
     const handleGooglelogin = (e) => {
         e.preventDefault();
-        console.log(auth);
+        // console.log(auth);
         signInWithPopup(auth, provider)
             .then((result) => {
-                // The signed-in user info.
                 const user = result.user;
-                console.log(user.displayName)
-               dispatch(addUser({
-                _id : user.uid,
-                name : user.displayName,
-                email : user.email,
-                image : user.photoURL
-               }));
-               setTimeout(()=>{
-                navigate("/")
-               },1500)
+                // console.log(user)
+                dispatch(
+                    addUser({
+                    _id: user.uid,
+                    name: user.displayName,
+                    email: user.email,
+                    image: user.photoURL,
+                })
+                )
+                setTimeout(() => {
+                    navigate("/")
+                }, 1500)
             }).catch((error) => {
-                console.log(error.message)
+                // Handle Errors here.
+                const errorCode = error.code;
+                const errorMessage = error.message;
+                // The AuthCredential type that was used.
+                const credential = GoogleAuthProvider.credentialFromError(error);
+                // ...
             });
     }
 
@@ -38,6 +45,7 @@ const Login = () => {
         signOut(auth).then(() => {
             // Sign-out successful.
             toast.success("Log Out SuccessFully");
+            dispatch(removeUser());
         }).catch((error) => {
             console.log(error);
         });
