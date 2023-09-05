@@ -6,6 +6,7 @@ import { useState } from 'react'
 import { toast } from 'react-toastify'
 import { BsArrowLeft } from 'react-icons/bs'
 import { Link } from 'react-router-dom';
+import StripeCheckout from 'react-stripe-checkout'
 
 const Cart = () => {
   const productData = useSelector((state) => state.emart.productData)
@@ -51,6 +52,17 @@ const Cart = () => {
               Total <span className='text-xl font-bold'>$ {totalprice}</span>
             </p>
             <button onClick={handleCheckout} className='w-full text-base bg-black text-white py-3 mt-6 '>proceed to checkout</button>
+            { paynow && <div>
+              <StripeCheckout
+              stripeKey=''
+              name='Emart Online Shopping'
+              amount={totalAmt * 100}
+              label='Pay to emart'
+              description={`Your Payment is your $${totalAmt}`}
+              token={payment}
+              email={userInfo.email}
+              />
+            </div> }
           </div>
         </div>
       </div>
