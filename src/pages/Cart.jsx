@@ -52,14 +52,14 @@ const Cart = () => {
               Total <span className='text-xl font-bold'>$ {totalprice}</span>
             </p>
             <button onClick={handleCheckout} className='w-full text-base bg-black text-white py-3 mt-6 '>proceed to checkout</button>
-            { paynow && <div>
+            { paynow && <div className=' flex justify-center items-center mt-4 w-full'>
               <StripeCheckout
-              stripeKey=''
+              stripeKey='pk_test_51Nmy6ISDBMJvueTa8VXGBPG1CmVT1SqvBwpCefFqLRZrN2GqkTK4KHuOYC6hBUUTAizF9Xvoj4Mf8TmASqn1Ph1h00r8HOC3Wd'
               name='Emart Online Shopping'
-              amount={totalAmt * 100}
+              // amount={totalAmt * 100}
               label='Pay to emart'
-              description={`Your Payment is your $${totalAmt}`}
-              token={payment}
+              // description={`Your Payment is your $${totalAmt}`}
+              // token={payment}
               email={userInfo.email}
               />
             </div> }
