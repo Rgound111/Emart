@@ -4,7 +4,6 @@ import { MdOutlineStar } from 'react-icons/md'
 import { useDispatch } from 'react-redux'
 import { addToCart } from '../redux/emartSlice'
 import { toast, ToastContainer } from 'react-toastify';
-import {increamentQuantity,decreamentQuantity} from '../redux/emartSlice'
 
 const Product = () => {
   const dispatch = useDispatch();
