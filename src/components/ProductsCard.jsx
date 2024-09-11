@@ -30,7 +30,7 @@ const ProductsCard = ({ product }) => {
       <div className='w-full h-96 cursor-pointer overflow-hidden'>
         <img onClick={handleDetails} className='w-full h-full group-hover:scale-110 duration-500'
           src={product.image} alt="productImg" />
-      </div>
+      </div> 
 
       <div className='border-[1px] px-2 py-4'>
         <div className='flex justify-between items-center'>
